@@ -43,4 +43,10 @@ export default {
             commit('doLoginFailure', response)
         }
     },
+
+    async doLogout({ commit }, data) {
+        commit('doLogout')
+
+        this.$router.replace({ path: '/auth/sign-in' })
+    },
 }

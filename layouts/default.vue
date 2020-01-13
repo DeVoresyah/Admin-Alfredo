@@ -85,7 +85,7 @@
                   <i class="si si-settings"></i>
                 </a>
                 <div role="separator" class="dropdown-divider"></div>
-                <a class="dropdown-item d-flex align-items-center justify-content-between" href="op_auth_signin.html">
+                <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)" @click="doLogout">
                   <span>Log Out</span>
                   <i class="si si-logout ml-1"></i>
                 </a>
@@ -132,11 +132,23 @@
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex"
+
 export default {
   data() {
     return {
       path: this.$route.path
     }
+  },
+  computed: {
+    ...mapState({
+      session: state.auth.session
+    })
+  },
+  methods: {
+    ...mapActions({
+      doLogout: 'auth/doLogout'
+    })
   }
 }
 </script>
