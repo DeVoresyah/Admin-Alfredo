@@ -142,7 +142,7 @@ export default {
   },
   computed: {
     ...mapState({
-      session: state.auth.session
+      session: state => state.auth.session
     })
   },
   methods: {
