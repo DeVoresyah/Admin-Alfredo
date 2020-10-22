@@ -33,7 +33,7 @@
                 <div class="col-lg-8 col-md-8 mx-auto">
                     <div class="block block-mode-loading-oneui align-items-center">
                         <div class="block-content block-content-full">
-                            <form @submit.prevent="">
+                            <form @submit.prevent="onSubmit">
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group">
@@ -105,6 +105,17 @@ export default {
     },
     methods: {
         formatDate: (date) => moment(new Date(date)).format('YYYY/MM/DD'),
+        onSubmit() {
+            const { username, name, phone_number, email, password } = this
+            const dataToSend = {
+                username,
+                name,
+                phone_number,
+                email,
+                password
+            }
+            this.addUser(dataToSend)
+        },
         ...mapActions({
             addUser: 'user/addUser'
         })

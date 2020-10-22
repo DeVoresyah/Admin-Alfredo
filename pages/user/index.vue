@@ -23,7 +23,6 @@
 
         <!-- Page Content -->
         <div class="content content-narrow">
-
             <!-- Customers and Latest Orders -->
             <div class="row row-deck">
                 <!-- Latest Customers -->
@@ -75,9 +74,9 @@
                                             {{ item.phone_number }}
                                         </td>
                                         <td class="text-center">
-                                            <a href="#" data-toggle="modal" data-target="#modal-edit">
+                                            <nuxt-link :to="`/user/${item.id}`" data-toggle="modal" data-target="#modal-edit">
                                                 <i class="fa fa-fw fa-pencil-alt"></i>
-                                            </a>
+                                            </nuxt-link>
                                             |
                                             <a href="#" data-toggle="modal" data-target="#modal-delete">
                                                 <i class="fa fa-fw fa-trash"></i>
@@ -161,7 +160,3 @@ export default {
     }
 }
 </script>
-
-<style>
-
-</style>

@@ -29,8 +29,8 @@ export default {
   */
   plugins: [
     '~/plugins/lazyload',
-    '~/plugins/vuex-persist',
-    '~/plugins/vue-debounce'
+    '~/plugins/vue-debounce',
+    { src: '~/plugins/vuex-persist.js', ssr: false }
   ],
   /*
   ** Nuxt.js dev-modules
